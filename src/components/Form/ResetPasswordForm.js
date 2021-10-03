@@ -1,11 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Form.css';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
 import { Reset } from '../../utils/AxiosHandler';
-
+import * as ROUTES from '../../constants/Routes';
 export default function ResetPasswordForm(props) {
   const { enableForgotPassword } = props;
   const history = useHistory();
@@ -13,7 +12,6 @@ export default function ResetPasswordForm(props) {
   const [password, setPassword] = useState('');
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState(null);
-  const context = useContext(AppContext);
 
   const resetHandler = async () => {
     console.log('clicked');
@@ -27,9 +25,9 @@ export default function ResetPasswordForm(props) {
       setConfirmPassword('');
       setPassword('');
       localStorage.removeItem('resetToken');
-      history.push('/login');
+      history.push(ROUTES.LOGIN);
     } else {
-      setErrors(response.results);
+      setErrors([response.results]);
       setSuccess(false);
     }
   };

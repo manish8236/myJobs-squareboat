@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from '../../components/Container/Container';
 import Header from '../../components/Header/Header';
-import Form from '../../components/Form/Form';
 import { AppContext } from '../../context/AppContext';
 import Breadcrumbs from '../../components/Breadcrumbs/BreadCrumbs';
 import JobPosts from '../../components/JobPostsSection/JobPosts';

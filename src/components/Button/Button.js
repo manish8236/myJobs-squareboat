@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Button.css';
 export default function Button(props) {
   const { title, type, clickEvent, icon, disabled } = props;

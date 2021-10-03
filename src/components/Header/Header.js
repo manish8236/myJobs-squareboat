@@ -23,7 +23,7 @@ function Header(props) {
 
   const navigateToLogin = () => {
     console.log('clicked !');
-    props.history.push('/login');
+    props.history.push(ROUTES.LOGIN);
   };
 
   const logoutHandler = () => {

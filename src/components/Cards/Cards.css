@@ -69,7 +69,7 @@
 
 .container-card_title {
   font-weight: 500;
-  color: var(--dark-background);
+  color: var(--primary-button);
   font-size: var(--font-medium);
   margin-bottom: 10px;
 }

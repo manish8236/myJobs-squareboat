@@ -7,7 +7,7 @@ import { AppContext } from '../../context/AppContext';
 import { Signup } from '../../utils/AxiosHandler';
 import Recruiter from '../../assets/icons/recruiter.png';
 import Candidate from '../../assets/icons/candidate.png';
-
+import * as ROUTES from '../../constants/Routes';
 export default function SignupForm(props) {
   const { enableForgotPassword } = props;
   const history = useHistory();
@@ -63,7 +63,7 @@ export default function SignupForm(props) {
       setFullname('');
       setConfirmPassword('');
       context.login(response.results);
-      history.push('/profile');
+      history.push(ROUTES.PROFILE);
     } else {
       setErrors(response.results);
       setSuccess(false);
@@ -191,7 +191,7 @@ export default function SignupForm(props) {
         Have an account?{' '}
         <span
           onClick={() => {
-            history.push('/login');
+            history.push(ROUTES.LOGIN);
           }}
         >
           Login

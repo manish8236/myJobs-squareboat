@@ -29,12 +29,13 @@ export default function LoginForm(props) {
         setPassword('');
         context.login(response.results);
         //   context.pushToBreadcrumb({ to: ROUTES.PROFILE, title: 'Home' });
-        history.push('/profile');
+        history.push(ROUTES.PROFILE);
       } else {
         setErrors([response.results]);
       }
     } else {
-      setErrors(response.results);
+      console.log('Res');
+      setErrors([response.results]);
       setSuccess(false);
     }
   };
@@ -87,7 +88,7 @@ export default function LoginForm(props) {
         New to MyJobs?{' '}
         <span
           onClick={() => {
-            history.push('/signup');
+            history.push(ROUTES.SIGNUP);
           }}
         >
           Create an account

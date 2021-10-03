@@ -1,13 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Form.css';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { PostJob } from '../../utils/AxiosHandler';
-
+import * as ROUTES from '../../constants/Routes';
 export default function PostJobForm(props) {
-  const { enableForgotPassword } = props;
   const history = useHistory();
   const [jobTitle, setjobTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -15,7 +14,6 @@ export default function PostJobForm(props) {
 
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState(null);
-  const context = useContext(AppContext);
 
   const postJobHandler = async () => {
     console.log('clicked');
@@ -30,7 +28,7 @@ export default function PostJobForm(props) {
       setDescription('');
       setLocation('');
 
-      history.push('/profile');
+      history.push(ROUTES.PROFILE);
     } else {
       setErrors(response.results);
       setSuccess(false);

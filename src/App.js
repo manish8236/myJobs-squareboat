@@ -1,12 +1,6 @@
 import './App.css';
-import React, { lazy, Suspense, useContext } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-  Link,
-} from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as ROUTES from './constants/Routes';
 import { AppContextProvider } from './context/AppContext';
 import AuthRecruiter from './utils/AuthRecruiter';

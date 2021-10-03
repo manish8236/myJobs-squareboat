@@ -7,8 +7,10 @@ import Cards from '../Cards/Cards';
 import Modal from '../Modal/Modal';
 import ReactPaginate from 'react-paginate';
 import { AppContext } from '../../context/AppContext';
-
+import * as ROUTES from '../../constants/Routes';
+import { useHistory } from 'react-router';
 export default function Pagination(props) {
+  const history = useHistory();
   const { jobsExist } = props;
   const modalRef = useRef(null);
   const openModal = () => {
@@ -71,7 +73,13 @@ export default function Pagination(props) {
           <img src={notepad} alt="notepad icon" />
         </div>
         <div className="title">Your posted jobs will show here!</div>
-        <Button type="primary" title="Post a Job" />
+        <Button
+          type="primary"
+          title="Post a Job"
+          clickEvent={() => {
+            history.push(ROUTES.POST_JOB);
+          }}
+        />
       </div>
     );
   } else

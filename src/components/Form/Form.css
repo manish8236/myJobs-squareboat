@@ -34,7 +34,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 1.3em;
 }
 
 .container-postjobform {
@@ -103,6 +103,7 @@
 .container-form,
 .container-signupform,
 .container-forgotform,
+.container-resetform,
 .container-postjobform .title {
   font-size: var(--font-large);
   font-weight: 500;
@@ -164,6 +165,9 @@
     width: 80%;
     min-height: 900px;
     gap: 1em;
+  }
+  .container-resetform {
+    width: 80%;
   }
   .container-loginBtn {
     margin-top: 0px;

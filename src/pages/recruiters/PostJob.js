@@ -4,13 +4,11 @@ import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import { AppContext } from '../../context/AppContext';
 import Breadcrumbs from '../../components/Breadcrumbs/BreadCrumbs';
-import JobPosts from '../../components/JobPostsSection/JobPosts';
-import Pagination from '../../components/Pagination/Pagination';
+
 import * as ROUTES from '../../constants/Routes';
 
 export default function PostJob(props) {
   const context = useContext(AppContext);
-  const [jobsExist, setJobsExist] = useState(false);
   useEffect(() => {
     console.log('Stack log ', context.breadcrumbStack);
 
@@ -34,6 +32,8 @@ export default function PostJob(props) {
       context.pushToBreadcrumb(newArray);
     };
   }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <Container

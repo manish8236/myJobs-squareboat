@@ -29,7 +29,7 @@ export default function ForgotForm(props) {
       //   context.login(response.results);
       history.push(ROUTES.RESET_PASS);
     } else {
-      setErrors(response.results);
+      setErrors([response.results]);
       setSuccess(false);
     }
   };
