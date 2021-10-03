@@ -8,6 +8,7 @@ export default function TextInput(props) {
     label,
     name,
     type,
+    variant,
     placeholder,
     onChange,
     value,
@@ -33,14 +34,26 @@ export default function TextInput(props) {
         <label className="label">{label}</label>
       )}
 
-      <input
-        name={name}
-        type={type}
-        className={errors ? 'form-textInput_error' : 'form-textInput'}
-        placeholder={placeholder}
-        onChange={onChange}
-        value={value}
-      />
+      {variant === 'textarea' ? (
+        <textarea
+          rows={4}
+          name={name}
+          type={type}
+          className={errors ? 'form-textInput_error' : 'form-textareaInput'}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+        />
+      ) : (
+        <input
+          name={name}
+          type={type}
+          className={errors ? 'form-textInput_error' : 'form-textInput'}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+        />
+      )}
     </div>
   );
 }

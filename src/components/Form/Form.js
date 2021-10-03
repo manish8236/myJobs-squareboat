@@ -5,6 +5,7 @@ import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import ForgotForm from './ForgotForm';
 import ResetPasswordForm from './ResetPasswordForm';
+import PostJobForm from './PostJobForm';
 export default function Form(props) {
   const { type, enableForgotPassword } = props;
 
@@ -18,6 +19,8 @@ export default function Form(props) {
     return <ForgotForm />;
   } else if (type === 'resetPass') {
     return <ResetPasswordForm />;
+  } else if (type === 'postJob') {
+    return <PostJobForm />;
   } else {
     return <div></div>;
   }

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Header.css';
 import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import dropdown from '../../assets/icons/dropdown.png';
 import useToggle from '../../hooks/useToggle';
@@ -14,12 +14,12 @@ function Header(props) {
   const [isOpen, setIsOpen] = useToggle();
 
   const handleBreadcrumb = () => {
-    console.log('Current stack ', context.breadcrumbStack);
-    const newArray = [
-      ...context.breadcrumbStack,
-      { to: ROUTES.POST_JOB, title: 'Post a Job' },
-    ];
-    context.pushToBreadcrumb(newArray);
+    // console.log('Current stack ', context.breadcrumbStack);
+    // const newArray = [
+    //   ...context.breadcrumbStack,
+    //   { to: ROUTES.POST_JOB, title: ' > Post a Job' },
+    // ];
+    // context.pushToBreadcrumb(newArray);
   };
 
   const navigateToLogin = () => {
@@ -87,11 +87,11 @@ function Header(props) {
         )}
 
         <div className="container-header_right">
-          <Link to={ROUTES.POST_JOB}>
+          <NavLink to={ROUTES.POST_JOB} activeClassName="linkactive">
             <div className="container-postJob" onClick={handleBreadcrumb}>
               Post a Job
             </div>
-          </Link>
+          </NavLink>
           <div className="container-dropdown" onClick={setIsOpen}>
             <div className="name-avatar">
               {context.user.name.charAt(0).toUpperCase()}

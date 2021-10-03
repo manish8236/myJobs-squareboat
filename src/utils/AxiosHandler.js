@@ -20,6 +20,33 @@ export const Login = async (body) => {
     });
 };
 
+export const PostJob = async (body) => {
+  const token = localStorage.getItem('jwtToken');
+
+  return axios
+    .post(
+      '/jobs',
+      {
+        title: body.title,
+        description: body.description,
+        location: body.location,
+      },
+      { headers: { Authorization: `${token}` } }
+    )
+    .then((results) => {
+      console.log('Results ', results.data);
+      const success = results.data?.success;
+
+      return { success, results: results.data?.data };
+    })
+    .catch((error) => {
+      const errors = error?.response?.data?.errors;
+      const success = error?.response?.data?.success;
+      console.log('Errors', errors);
+      return { success, results: errors };
+    });
+};
+
 export const Forgot = async (email) => {
   return axios
     .get('/auth/resetpassword', { params: { email } })

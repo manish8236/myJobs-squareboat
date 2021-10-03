@@ -7,6 +7,7 @@ const initialState = {
   role: null,
   breadcrumbStack: [{ to: ROUTES.PROFILE, title: 'Home' }],
   jobs: null,
+  activeRoute: null,
   avatar: null,
   applicants: null,
 };
@@ -27,13 +28,15 @@ const AppContext = createContext({
   jobs: null,
   avatar: null,
   applicants: null,
+  activeRoute: null,
   breadcrumbStack: [{ to: ROUTES.PROFILE, title: 'Home' }],
   getApplicants: (jobData) => {},
   getJobs: (userData) => {},
   postJob: (jobPayload) => {},
   createAvatar: (username) => {},
+  setActiveRoute: (route) => {},
   login: (userData) => {},
-  pushToBreadcrumb: (route) => {},
+  pushToBreadcrumb: (routes) => {},
   popFromBreadcrum: (route) => {},
   logout: () => {},
 });
@@ -52,6 +55,11 @@ function authReducer(state, action) {
         jobs: action.payload,
       };
 
+    case 'SET_ACTIVE_ROUTE':
+      return {
+        ...state,
+        jobs: action.payload,
+      };
     case 'CREATE_AVATAR':
       return {
         ...state,
@@ -98,6 +106,13 @@ function AppContextProvider(props) {
     dispatch({
       type: 'LOGIN',
       payload: userData,
+    });
+  }
+
+  function setActiveRoute(route) {
+    dispatch({
+      type: 'SET_ACTIVE_ROUTE',
+      payload: route,
     });
   }
 
@@ -164,11 +179,13 @@ function AppContextProvider(props) {
       value={{
         user: state.user,
         role: state.role,
-        breadcrumbStack: [{ to: ROUTES.PROFILE, title: 'Home' }],
+        activeRoute: state.activeRoute,
+        breadcrumbStack: state.breadcrumbStack,
         jobs: state.jobs,
         avatar: state.avatar,
         applicants: state.applicants,
         getApplicants,
+        setActiveRoute,
         pushToBreadcrumb,
         popFromBreadcrum,
         getJobs,
