@@ -10,6 +10,7 @@ import {
 import * as ROUTES from './constants/Routes';
 import { AppContextProvider } from './context/AppContext';
 import AuthRecruiter from './utils/AuthRecruiter';
+import Snackbar from './components/Snackbar/Snackbar';
 //Lazy Loading Pages
 const Login = lazy(() => import('./pages/recruiters/Login'));
 const Signup = lazy(() => import('./pages/recruiters/Signup'));
@@ -44,6 +45,7 @@ const App = (props) => {
             </Switch>
           </Suspense>
         </Router>
+        <Snackbar />
       </AppContextProvider>
     </>
   );

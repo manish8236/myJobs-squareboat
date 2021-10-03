@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   errors: null,
   role: null,
+  snackbarMessage: null,
   breadcrumbStack: [{ to: ROUTES.PROFILE, title: 'Home' }],
   jobs: null,
   activeRoute: null,
@@ -26,12 +27,14 @@ const AppContext = createContext({
   user: null,
   role: null,
   jobs: null,
+  snackbarMessage: null,
   avatar: null,
   applicants: null,
   activeRoute: null,
   breadcrumbStack: [{ to: ROUTES.PROFILE, title: 'Home' }],
   getApplicants: (jobData) => {},
   getJobs: (userData) => {},
+  updateSnackbarMessage: (message) => {},
   postJob: (jobPayload) => {},
   createAvatar: (username) => {},
   setActiveRoute: (route) => {},
@@ -53,6 +56,12 @@ function authReducer(state, action) {
       return {
         ...state,
         jobs: action.payload,
+      };
+
+    case 'UPDATE_SNACKBAR_MESSAGE':
+      return {
+        ...state,
+        snackbarMessage: action.payload,
       };
 
     case 'SET_ACTIVE_ROUTE':
@@ -113,6 +122,13 @@ function AppContextProvider(props) {
     dispatch({
       type: 'SET_ACTIVE_ROUTE',
       payload: route,
+    });
+  }
+
+  function updateSnackbarMessage(message) {
+    dispatch({
+      type: 'UPDATE_SNACKBAR_MESSAGE',
+      payload: message,
     });
   }
 
@@ -182,11 +198,13 @@ function AppContextProvider(props) {
         activeRoute: state.activeRoute,
         breadcrumbStack: state.breadcrumbStack,
         jobs: state.jobs,
+        snackbarMessage: state.snackbarMessage,
         avatar: state.avatar,
         applicants: state.applicants,
         getApplicants,
         setActiveRoute,
         pushToBreadcrumb,
+        updateSnackbarMessage,
         popFromBreadcrum,
         getJobs,
         postJob,

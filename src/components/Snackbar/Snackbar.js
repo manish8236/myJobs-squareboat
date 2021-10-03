@@ -1,31 +1,55 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import React, {
+  useState,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useContext,
+} from 'react';
 import ReactDOM from 'react-dom';
+import closeIcon from '../../assets/icons/cancelred.png';
+
+import { AppContext } from '../../context/AppContext';
 import './Snackbar.css';
 
 const Snackbar = forwardRef((props, ref) => {
-  const [showSnackbar, setShowSnackbar] = useState(false);
+  const context = useContext(AppContext);
 
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [snackbarMessageActive, setSnackbarMessageActive] = useState(false);
   useImperativeHandle(ref, () => ({
     show() {
       setShowSnackbar(true);
-      setTimeout(() => {
-        setShowSnackbar(false);
-      }, 3000);
     },
   }));
+
+  useEffect(() => {
+    if (context.snackbarMessage && !snackbarMessageActive) {
+      setShowSnackbar(true);
+      setSnackbarMessageActive(true);
+      setTimeout(() => {
+        setShowSnackbar(false);
+        setSnackbarMessageActive(false);
+        context.updateSnackbarMessage(null);
+      }, 3000);
+    }
+  }, [context.snackbarMessage]);
+
   return ReactDOM.createPortal(
-    <div
-      className="snackbar"
-      id={showSnackbar ? 'show' : 'hide'}
-      style={{
-        backgroundColor: props.type === 'success' ? '#00F593' : '#FF0033',
-        color: props.type === 'success' ? 'black' : 'white',
-      }}
-    >
-      <div className="symbol">
-        {props.type === 'success' ? <h1>&#x2713;</h1> : <h1>&#x2613;</h1>}
+    <div className="snackbar" id={showSnackbar ? 'show' : 'hide'}>
+      <div className="close">
+        <img
+          className="closeSnack"
+          src={closeIcon}
+          onClick={() => {
+            setShowSnackbar(false);
+            setSnackbarMessageActive(false);
+            context.updateSnackbarMessage(null);
+          }}
+          alt="close"
+        />
       </div>
-      <div className="message">{props.message}</div>
+      <div className="snacktitle">{context.snackbarMessage?.title}</div>
+      <div className="messagesubtitle">{context.snackbarMessage?.subtitle}</div>
     </div>,
     document.getElementById('portal')
   );

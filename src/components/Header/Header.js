@@ -6,7 +6,6 @@ import { AppContext } from '../../context/AppContext';
 import dropdown from '../../assets/icons/dropdown.png';
 import useToggle from '../../hooks/useToggle';
 import * as ROUTES from '../../constants/Routes';
-import Snackbar from '../Snackbar/Snackbar';
 function Header(props) {
   const context = useContext(AppContext);
   const { type } = props;
@@ -29,6 +28,11 @@ function Header(props) {
 
   const logoutHandler = () => {
     context.logout();
+
+    context.updateSnackbarMessage({
+      title: 'Logged Out',
+      subtitle: 'You have successfully logged out.',
+    });
     // snackbarRef.current.show();
   };
   //   const navigateToHome = () => {
