@@ -1,8 +1,8 @@
 .snackbar {
   position: fixed;
-  left: 50%;
-  top: 5%;
-  transform: translate(-50%, -50%);
+  right: 5%;
+  top: 10%;
+
   width: 350px;
   height: 60px;
   border-radius: 8px;

@@ -1,4 +1,5 @@
 import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import ReactDOM from 'react-dom';
 import './Snackbar.css';
 
 const Snackbar = forwardRef((props, ref) => {
@@ -12,7 +13,7 @@ const Snackbar = forwardRef((props, ref) => {
       }, 3000);
     },
   }));
-  return (
+  return ReactDOM.createPortal(
     <div
       className="snackbar"
       id={showSnackbar ? 'show' : 'hide'}
@@ -25,7 +26,8 @@ const Snackbar = forwardRef((props, ref) => {
         {props.type === 'success' ? <h1>&#x2713;</h1> : <h1>&#x2613;</h1>}
       </div>
       <div className="message">{props.message}</div>
-    </div>
+    </div>,
+    document.getElementById('portal')
   );
 });
 

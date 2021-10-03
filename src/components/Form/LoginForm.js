@@ -22,13 +22,17 @@ export default function LoginForm(props) {
     console.log('Response ', response);
 
     if (response.success) {
-      setSuccess(true);
-      setErrors(null);
-      setEmail('');
-      setPassword('');
-      context.login(response.results);
-      //   context.pushToBreadcrumb({ to: ROUTES.PROFILE, title: 'Home' });
-      history.push('/profile');
+      if (response?.results?.userRole === 0) {
+        setSuccess(true);
+        setErrors(null);
+        setEmail('');
+        setPassword('');
+        context.login(response.results);
+        //   context.pushToBreadcrumb({ to: ROUTES.PROFILE, title: 'Home' });
+        history.push('/profile');
+      } else {
+        setErrors([response.results]);
+      }
     } else {
       setErrors(response.results);
       setSuccess(false);

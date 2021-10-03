@@ -18,7 +18,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="container-hero_right">
-        <img src={banner}></img>
+        <img className="heroimage" src={banner}></img>
       </div>
     </div>
   );

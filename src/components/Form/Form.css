@@ -1,6 +1,7 @@
 .container-form {
   width: 40%;
-  min-height: 550px;
+  max-width: 600px;
+  min-height: 600px;
   /* height: 50%; */
   position: absolute;
   z-index: 500;
@@ -129,6 +130,7 @@
 
 .container-loginBtn {
   display: flex;
+
   margin-top: 35px;
   justify-content: center;
 }
@@ -154,13 +156,17 @@
   text-align: right;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1160px) {
   .container-form {
     width: 85%;
   }
   .container-signupform {
-    width: 85%;
+    width: 80%;
     min-height: 900px;
+    gap: 1em;
+  }
+  .container-loginBtn {
+    margin-top: 0px;
   }
 
   .container-forgotform {

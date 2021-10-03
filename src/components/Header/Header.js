@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import './Header.css';
 import Button from '../Button/Button';
 import { Link, NavLink } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { AppContext } from '../../context/AppContext';
 import dropdown from '../../assets/icons/dropdown.png';
 import useToggle from '../../hooks/useToggle';
 import * as ROUTES from '../../constants/Routes';
-
+import Snackbar from '../Snackbar/Snackbar';
 function Header(props) {
   const context = useContext(AppContext);
   const { type } = props;
@@ -29,6 +29,7 @@ function Header(props) {
 
   const logoutHandler = () => {
     context.logout();
+    // snackbarRef.current.show();
   };
   //   const navigateToHome = () => {
   //     console.log('clicked !');

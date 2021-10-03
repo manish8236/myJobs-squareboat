@@ -10,7 +10,7 @@ export default function ForgotPassword(props) {
   const history = useHistory();
 
   useEffect(() => {
-    if (context.user) {
+    if (context.user && context.user.userRole === 0) {
       history.push('/profile');
     }
   }, [context.user]);

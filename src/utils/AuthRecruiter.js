@@ -9,7 +9,7 @@ function AuthRecruiter({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) =>
-        !user || user.userRole != 0 ? (
+        !user || user?.userRole === 1 ? (
           <Redirect to="/login" />
         ) : (
           <Component {...props} />
