@@ -1,0 +1,85 @@
+.container-authbtn {
+  background: #43afff33 0% 0% no-repeat padding-box;
+  border: 1px solid #43afff;
+  border-radius: var(--btn-border-radius);
+  width: 148px;
+  height: 46px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 500;
+  font-size: var(--font-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-btnprimary {
+  background: var(--primary-button);
+  border: 1px solid #43afff;
+  border-radius: var(--btn-border-radius);
+  width: 148px;
+  height: 46px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 500;
+  font-size: var(--font-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-btnlight {
+  background: #43afff33;
+  border-radius: var(--btn-border-radius);
+  width: 148px;
+  height: 46px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--dark-background);
+  font-weight: 500;
+  font-size: var(--font-caption);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconbtn-container {
+  background: var(--primary-button);
+  border: 1px solid #43afff;
+  border-radius: var(--btn-border-radius);
+  width: 148px;
+  height: 46px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 500;
+  font-size: var(--font-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconbtn-container_disabled {
+  background: #aec2d1;
+  border: 1px solid #aec2d1;
+  border-radius: var(--btn-border-radius);
+  width: 148px;
+  height: 46px;
+  text-align: center;
+  cursor: not-allowed;
+  color: var(--white);
+  font-weight: 500;
+  font-size: var(--font-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnTitle {
+  font-size: var(--font-small);
+}
+
+.btnIconImage {
+  width: 25px;
+  margin: 5px;
+}

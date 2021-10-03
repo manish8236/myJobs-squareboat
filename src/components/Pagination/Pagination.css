@@ -1,0 +1,106 @@
+.container-nojobs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.5em;
+  position: fixed;
+  bottom: 30%;
+}
+
+.container-paginator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 75%;
+
+  width: 80%;
+  gap: 1.5em;
+  position: fixed;
+  bottom: 2%;
+}
+
+.container-nojobs .icon {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-nojobs .icon img {
+  background-size: contain;
+  width: 80%;
+}
+
+.container-nojobs .title {
+  color: var(--dark-background);
+}
+
+.user {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #b3e3ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+}
+
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  align-self: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+/* .react-paginate {
+  display: flex;
+} */
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #4d618e;
+  color: #4d618e;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: var(--primary-button);
+  border-color: var(--primary-button);
+  /* background-color: #2b2eff; */
+}
+
+.paginationActive a {
+  border: 1px solid #4d618e;
+  color: #4d618e;
+}
+
+.paginationDisabled a {
+  color: #ccc;
+  border-color: #ccc;
+  /* background-color: grey; */
+}
+
+.container-jobposts_cardsp {
+  display: flex;
+
+  width: 100%;
+  /* height: 650px; */
+
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+@media screen and (max-width: 820px) {
+  .container-paginator {
+    overflow-y: scroll;
+  }
+}

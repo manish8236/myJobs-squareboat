@@ -1,0 +1,25 @@
+.container-jobposts {
+  display: flex;
+  width: 80%;
+  margin-top: 30px;
+  flex-direction: column;
+  color: white;
+  font-weight: 400;
+}
+
+.jobHeader {
+  color: white;
+  font-weight: 500;
+  font-size: var(--font-large);
+}
+
+.container-jobposts_cards {
+  display: flex;
+  position: absolute;
+  top: 70%;
+  width: 80%;
+  height: 650px;
+
+  flex-wrap: wrap;
+  gap: 2em;
+}

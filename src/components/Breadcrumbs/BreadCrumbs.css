@@ -1,0 +1,30 @@
+.container-breadcrumb {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start;
+
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.crumbItem {
+  color: white;
+  font-size: var(--font-caption);
+  font-weight: 300;
+}
+
+.container-crumbItem {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5em;
+}
+
+.container-crumbItem img {
+  width: 18px;
+}
+
+.container-crumbItem span {
+  color: white;
+  font-size: var(--font-caption);
+  font-weight: 300;
+}

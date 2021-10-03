@@ -1,0 +1,38 @@
+.container-textinput {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex: 1;
+}
+.label {
+  font-size: var(--font-small);
+  color: var(--dark-background);
+}
+.form-textInput {
+  background: #e8e8e833 0% 0% no-repeat padding-box;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  padding: 10px;
+  height: 46px;
+}
+
+.form-textInput_error {
+  background: #e8e8e833 0% 0% no-repeat padding-box;
+  border: 1px solid var(--error);
+  border-radius: 5px;
+  padding: 10px;
+  height: 46px;
+}
+
+.form-textInput:focus {
+  outline-color: var(--primary-button);
+}
+
+.container-textinput_forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-small);
+  color: var(--primary-button);
+  cursor: pointer;
+}

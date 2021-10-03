@@ -1,0 +1,35 @@
+:root {
+  --light-background: #edf6ff;
+  --dark-background: #303f60;
+  --darker-background: ##1a253c;
+  --avatar-background: #d9efff;
+  --error: #ff0000;
+  --white: #fff;
+  --primary-button: #43afff;
+  --drop-shadow: #557da526;
+  --border-dark: #4d618e;
+  --font-caption: 14px;
+  --font-small: 16px;
+  --font-medium: 18px;
+  --font-large: 22px;
+  --font-vlarge: 50px;
+  --btn-border-radius: 5px;
+  --card-border-radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.15s linear ease-in-out;
+  overflow-x: hidden;
+}
