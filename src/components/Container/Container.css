@@ -53,3 +53,9 @@
 
   border: 1px solid #4d618e;
 }
+
+@media (max-width: 560px) {
+  .container-landing_bottom {
+    min-height: calc(100vh - 280px);
+  }
+}

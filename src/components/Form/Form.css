@@ -163,7 +163,7 @@
   }
   .container-signupform {
     width: 80%;
-    min-height: 900px;
+    min-height: 800px;
     gap: 1em;
   }
   .container-resetform {
@@ -184,7 +184,7 @@
 @media (max-width: 550px) {
   .container-signupform {
     width: 85%;
-    top: 60%;
+    top: 50%;
     min-height: 970px;
   }
 }
