@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   gap: 1.5em;
   position: fixed;
   bottom: 30%;
@@ -15,11 +14,16 @@
   justify-content: space-between;
   align-items: center;
   height: 75%;
-
   width: 80%;
   gap: 1.5em;
   position: fixed;
   bottom: 2%;
+}
+
+@media (max-height: 800px) {
+  .container-paginator {
+    height: 65%;
+  }
 }
 
 .container-nojobs .icon {
@@ -36,6 +40,12 @@
 
 .container-nojobs .title {
   color: var(--dark-background);
+}
+
+.borders {
+  border: 1px solid red;
+  outline-color: #4d618e;
+  box-shadow: #4d618e;
 }
 
 .user {
@@ -102,5 +112,6 @@
 @media screen and (max-width: 820px) {
   .container-paginator {
     overflow-y: scroll;
+    width: 90%;
   }
 }

@@ -105,12 +105,14 @@
   width: 11px;
   height: 8px;
   border-radius: 15px;
-  background-color: #fff; /* or add it to the track */
+  background-color: #fff;
+  overflow: hidden;
 }
 
 /* Add a thumb */
 .container_candidatelist::-webkit-scrollbar-thumb {
   border-radius: 15px;
+  overflow: hidden;
 
   background: #a9afbc;
 }

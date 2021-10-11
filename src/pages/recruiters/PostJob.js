@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Container from '../../components/Container/Container';
-import Header from '../../components/Header/Header';
-import Form from '../../components/Form/Form';
+import React, { useContext, useEffect } from 'react';
+import { Container, Header, Form, BreadCrumbs } from '../../components';
+
 import { AppContext } from '../../context/AppContext';
-import Breadcrumbs from '../../components/Breadcrumbs/BreadCrumbs';
 
 import * as ROUTES from '../../constants/Routes';
 
@@ -33,13 +31,11 @@ export default function PostJob(props) {
     };
   }, []);
 
-  useEffect(() => {}, []);
-
   return (
     <Container
       recruiterContainer={false}
       header={<Header type="loggedIn" history={props.history} />}
-      breadcrumbs={<Breadcrumbs />}
+      breadcrumbs={<BreadCrumbs />}
       form={<Form type="postJob" enableForgotPassword={false} />}
     />
   );

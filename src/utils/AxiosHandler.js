@@ -1,5 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://jobs-api.squareboat.info/api/v1/';
+
 export const Login = async (body) => {
   return axios
     .post('/auth/login', {

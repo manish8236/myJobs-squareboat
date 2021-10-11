@@ -20,7 +20,8 @@
 
 .container-signupform {
   width: 40%;
-  min-height: 860px;
+  /* min-height: 860px; */
+  height: fit-content;
   /* height: 50%; */
   position: absolute;
   z-index: 500;
@@ -106,6 +107,7 @@
 .container-resetform,
 .container-postjobform .title {
   font-size: var(--font-large);
+  /* font-size: clamp(3em, calc(9 / 80 * 100vw), 9em); */
   font-weight: 500;
 }
 
@@ -140,10 +142,10 @@
   font-size: var(--font-small);
   color: var(--dark-background);
   text-align: center;
-  position: fixed;
+  /* position: fixed;
   bottom: 5px;
   right: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -50%); */
 }
 
 .footer-signup span {
@@ -163,7 +165,8 @@
   }
   .container-signupform {
     width: 80%;
-    min-height: 800px;
+    /* min-height: 800px; */
+    /* height: fit-content; */
     gap: 1em;
   }
   .container-resetform {
@@ -183,8 +186,14 @@
 
 @media (max-width: 550px) {
   .container-signupform {
-    width: 85%;
+    width: 95%;
     top: 50%;
-    min-height: 970px;
+    /* min-height: 970px; */
+  }
+
+  .container-form {
+    width: 95%;
+    /* top: 50%; */
+    /* min-height: 970px; */
   }
 }

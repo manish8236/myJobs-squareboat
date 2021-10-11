@@ -62,7 +62,6 @@ const Modal = forwardRef((props, ref) => {
   };
   useEffect(() => {
     if (jobId) {
-      console.log('aa');
       GetCandidatesArray();
     }
   }, [jobId]);

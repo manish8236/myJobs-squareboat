@@ -11,6 +11,9 @@ import * as ROUTES from '../../constants/Routes';
 import { useHistory } from 'react-router';
 export default function Pagination(props) {
   const history = useHistory();
+
+  const [searchText, setSearchText] = useState('');
+
   const { jobsExist } = props;
   const modalRef = useRef(null);
   const openModal = () => {
@@ -42,7 +45,6 @@ export default function Pagination(props) {
   };
   const usersPerPage = 5;
   const pagesVisited = pageNumber * usersPerPage;
-  console.log('Usersss', users, context.jobs);
   const displayUsers =
     users &&
     users.slice(pagesVisited, pagesVisited + usersPerPage).map((user, key) => {

@@ -30,6 +30,22 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: all 0.15s linear ease-in-out;
+  transition: all 0.15s ease-in-out;
   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+  height: 8px;
+  /* border-radius: 15px; */
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Add a thumb */
+body::-webkit-scrollbar-thumb {
+  /* border-radius: 15px; */
+  overflow: hidden;
+
+  background: #a9afbc;
 }

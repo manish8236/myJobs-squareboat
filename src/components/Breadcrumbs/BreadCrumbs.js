@@ -7,9 +7,6 @@ import { AppContext } from '../../context/AppContext';
 const Breadcrumbs = () => {
   const context = useContext(AppContext);
   // Don't render a single breadcrumb.
-  useEffect(() => {
-    console.log('Check stack ', context.breadcrumbStack);
-  }, [context.breadcrumbStack]);
 
   return (
     <div className="container-breadcrumb">

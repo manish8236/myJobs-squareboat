@@ -51,7 +51,8 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-small);
+  font-size: clamp(0.5em, 4vw, 0.7em);
+  /* font-size: var(--font-small); */
   color: var(--primary-button);
   cursor: pointer;
 }

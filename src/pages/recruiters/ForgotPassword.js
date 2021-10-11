@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import Container from '../../components/Container/Container';
-import Header from '../../components/Header/Header';
-import Form from '../../components/Form/Form';
+import { Container, Header, Form } from '../../components';
+
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import * as ROUTES from '../../constants/Routes';
