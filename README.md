@@ -2,6 +2,8 @@
 
 Technical task
 
+- Live : https://myjobs-manish.netlify.app/
+ 
 # Tasks
 
 - Login/Register Recruiter
